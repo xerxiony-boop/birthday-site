@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОБЪЕКТ №007 // Неописуемая красота</title>
+    <link rel="stylesheet" href="case007.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Задний интерактивный холст для частиц -->
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container">
+        <!-- Шапка -->
+        <header class="header">
+            <a href="jokes.html" class="back-btn">← К АРХИВАМ</a>
+            <div class="dossier-badge">DOSSIER #007 // CONFIDENTIAL</div>
+        </header>
+
+        <section class="title-section">
+            <h1 class="main-title">Неописуемая красота</h1>
+            <p class="subtitle">Архив самых ценных кадров этой вселенной</p>
+        </section>
+
+        <!-- Masonry Галерея (10 фото + 5 видео) -->
+        <main class="gallery-grid">
+            
+            <!-- РЯД 1 -->
+            <div class="media-card photo" data-tilt>
+                <img src="media/photo1.jpg" alt="Memory 1" loading="lazy">
+                <div class="card-overlay"><span>✨ #01</span></div>
+            </div>
+
+            <div class="media-card video" data-tilt>
+                <video src="media/video1.mp4" loop muted playsinline></video>
+                <div class="video-badge">▶ LIVE</div>
+                <div class="card-overlay"><span>🎥 #01</span></div>
+            </div>
+
+            <div class="media-card photo vertical" data-tilt>
+                <img src="media/photo2.jpg" alt="Memory 2" loading="lazy">
+                <div class="card-overlay"><span>✨ #02</span></div>
+            </div>
+
+            <!-- РЯД 2 -->
+            <div class="media-card photo" data-tilt>
+                <img src="media/photo3.jpg" alt="Memory 3" loading="lazy">
+                <div class="card-overlay"><span>✨ #03</span></div>
+            </div>
+
+            <div class="media-card video vertical" data-tilt>
+                <video src="media/video2.mp4" loop muted playsinline></video>
+                <div class="video-badge">▶ LIVE</div>
+                <div class="card-overlay"><span>🎥 #02</span></div>
+            </div>
+
+            <div class="media-card photo wide" data-tilt>
+                <img src="media/photo4.jpg" alt="Memory 4" loading="lazy">
+                <div class="card-overlay"><span>✨ #04</span></div>
+            </div>
+
+            <!-- РЯД 3 -->
+            <div class="media-card photo" data-tilt>
+                <img src="media/photo5.jpg" alt="Memory 5" loading="lazy">
+                <div class="card-overlay"><span>✨ #05</span></div>
+            </div>
+
+            <div class="media-card video" data-tilt>
+                <video src="media/video3.mp4" loop muted playsinline></video>
+                <div class="video-badge">▶ LIVE</div>
+                <div class="card-overlay"><span>🎥 #03</span></div>
+            </div>
+
+            <div class="media-card photo vertical" data-tilt>
+                <img src="media/photo6.jpg" alt="Memory 6" loading="lazy">
+                <div class="card-overlay"><span>✨ #06</span></div>
+            </div>
+
+            <!-- РЯД 4 -->
+            <div class="media-card photo" data-tilt>
+                <img src="media/photo7.jpg" alt="Memory 7" loading="lazy">
+                <div class="card-overlay"><span>✨ #07</span></div>
+            </div>
+
+            <div class="media-card video wide" data-tilt>
+                <video src="media/video4.mp4" loop muted playsinline></video>
+                <div class="video-badge">▶ LIVE</div>
+                <div class="card-overlay"><span>🎥 #04</span></div>
+            </div>
+
+            <div class="media-card photo" data-tilt>
+                <img src="media/photo8.jpg" alt="Memory 8" loading="lazy">
+                <div class="card-overlay"><span>✨ #08</span></div>
+            </div>
+
+            <!-- РЯД 5 -->
+            <div class="media-card photo vertical" data-tilt>
+                <img src="media/photo9.jpg" alt="Memory 9" loading="lazy">
+                <div class="card-overlay"><span>✨ #09</span></div>
+            </div>
+
+            <div class="media-card video" data-tilt>
+                <video src="media/video5.mp4" loop muted playsinline></video>
+                <div class="video-badge">▶ LIVE</div>
+                <div class="card-overlay"><span>🎥 #05</span></div>
+            </div>
+
+            <div class="media-card photo" data-tilt>
+                <img src="media/photo10.jpg" alt="Memory 10" loading="lazy">
+                <div class="card-overlay"><span>✨ #10</span></div>
+            </div>
+
+        </main>
+
+        <!-- Финальная кнопка перехода -->
+        <footer class="footer-section">
+            <div class="heart-divider">💖</div>
+            <a href="final.html" class="final-next-btn" id="finalBtn">
+                <span>ГЛАВНОЕ ПОСЛАНИЕ</span>
+                <small>Нажми, чтобы открыть секретное письмо</small>
+            </a>
+        </footer>
+    </div>
+
+    <!-- Lightbox Модальное окно для полноэкранного просмотра -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
+    <script src="case007.js"></script>
+</body>
+</html>

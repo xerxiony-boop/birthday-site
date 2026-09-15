@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Километры между нами</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="distance.css">
+</head>
+<body>
+
+    <!-- Фоновые эффекты -->
+    <div id="particles-container" class="particles-container"></div>
+    <div class="ambient-glow primary"></div>
+    <div class="ambient-glow secondary"></div>
+
+    <main class="story">
+
+        <section class="intro">
+            <div class="star-icon js-spark-trigger" title="Нажми">✦</div>
+
+            <p class="line animate delay-1">
+                Нас разделяли километры...
+            </p>
+
+            <p class="line second animate delay-2">
+                Мы много разговаривали обо всём на свете.
+            </p>
+
+            <!-- Линия расстояния между городами -->
+            <div class="distance-path animate delay-3">
+                <span class="city-dot">Ты</span>
+                <div class="flight-line">
+                    <div class="flying-spark"></div>
+                </div>
+                <span class="city-dot">Я</span>
+            </div>
+
+            <div class="status-badge animate delay-4">
+                <span class="pulse-dot"></span>
+                <span class="status-text">звонки и ночи без сна</span>
+            </div>
+        </section>
+
+        <section class="message animate delay-5">
+            <div class="call-card-wrapper">
+                <div class="call-wave-ring"></div>
+                <div class="photo-frame">
+                    <img src="images/distance-call.jpg" alt="Наш звонок на расстоянии" class="clickable-photo">
+                    <div class="frame-caption">«Сквозь экран, но ближе всех»</div>
+                </div>
+            </div>
+            <div class="zoom-hint animate delay-6">🔍 Нажми, чтобы открыть полностью</div>
+
+            <p class="after animate delay-7">
+                И каждый раз с замиранием сердца задавались вопросом:<br>
+                <em>«Как же пройдёт наша самая первая встреча?»</em> 💭
+            </p>
+        </section>
+
+        <a href="walk.html" class="button js-next-btn animate delay-8">
+            <span>Наша встреча →</span>
+        </a>
+
+    </main>
+
+    <!-- Модальное окно для просмотра фото -->
+    <div id="photo-modal" class="photo-modal">
+        <div class="modal-content">
+            <img src="" alt="Увеличенное фото" id="modal-img">
+            <p class="modal-close-text">Нажми в любом месте, чтобы закрыть</p>
+        </div>
+    </div>
+
+    <!-- Подключаем персональный скрипт distance.js -->
+    <script src="distance.js"></script>
+</body>
+</html>

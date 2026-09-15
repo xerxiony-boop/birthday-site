@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ДЕЛО №004 // IDENT_041</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="case004.css">
+</head>
+
+<body>
+
+<div class="amber-noise"></div>
+<div class="scanlines"></div>
+
+<main class="ident-page">
+
+    <header class="top-bar">
+        <div>SUBJECT // IDENTIFICATION</div>
+        <div class="status-amber">● ACCESS_REQUIRED</div>
+        <div>FILE // IDENT_041</div>
+    </header>
+
+    <section class="ident-card">
+
+        <div class="card-header">
+            <span class="tag">SUBJECT_PHOTO</span>
+            <span class="progress-tag">ПОЗЫВНОЙ: <span id="word-num">1</span>/8</span>
+        </div>
+
+        <!-- ЗОНА ФОТОГРАФИИ -->
+        <div class="photo-box">
+            <div class="scanner-laser"></div>
+            <img src="images/lesha.jpg" alt="Объект" id="target-photo" class="scanned-photo">
+            <div class="photo-overlay" id="photo-overlay"></div>
+        </div>
+
+        <div class="question-box">
+            <p class="q-label">ВОПРОС СИСТЕМЫ:</p>
+            <h1 class="main-question">Как ты меня называешь?</h1>
+        </div>
+
+        <!-- ЯЧЕЙКИ ДЛЯ БУКВ СЛОВА -->
+        <div id="word-slots" class="word-slots"></div>
+
+        <!-- ФОРМА ВВОДА -->
+        <form id="guess-form" class="input-form" autocomplete="off">
+            <div class="input-wrapper">
+                <span class="prompt">&gt;</span>
+                <input type="text" id="word-input" placeholder="Введите слово целиком..." autofocus required>
+            </div>
+            <button type="submit" id="submit-btn">ПОДТВЕРДИТЬ</button>
+        </form>
+
+        <p id="error-msg" class="error-msg hidden">ИДЕНТИФИКАТОР НЕ СОВПАДАЕТ!</p>
+
+    </section>
+
+    <!-- ФИНАЛЬНЫЙ ОВЕРЛЕЙ -->
+    <div id="final-overlay" class="final-overlay hidden">
+        <div class="final-modal">
+            <div class="modal-code">IDENTITY CONFIRMED // ALL PASSED</div>
+            
+            <h2>ЛИЧНОСТЬ УСТАНОВЛЕНА!</h2>
+            
+            <p class="final-desc">
+                Все 8 позывных успешно идентифицированы.<br>
+                Объект полностью распознан.
+            </p>
+
+            <div class="amber-stamp">
+                ИДЕНТИФИКАЦИЯ<br>100%
+            </div>
+
+            <a href="jokes.html" class="back-btn">
+                ← ВЕРНУТЬСЯ В АРХИВ
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <span>SECURITY LEVEL: HIGH</span>
+        <span>004 / 007</span>
+    </footer>
+
+</main>
+
+<script src="case004.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #020712;
+    color: #9bb5e6;
+    font-family: 'Share Tech Mono', 'Special Elite', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 15px;
+}
+
+/* ТЕМНО-СИНИЕ ЭФФЕКТЫ */
+.blue-noise {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(10, 35, 80, 0.25) 0%, rgba(1, 4, 12, 0.98) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.scanlines {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0, 15, 35, 0.5) 50%,
+        rgba(0, 15, 35, 0.5)
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ЭКРАН СБОЯ (BSOD / GLITCH) */
+.glitch-screen {
+    position: fixed;
+    inset: 0;
+    background: #001133;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.05s ease;
+}
+
+.glitch-screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    animation: blueGlitch 0.1s infinite alternate;
+}
+
+@keyframes blueGlitch {
+    0% { background: #001133; transform: translate(2px, -2px); }
+    50% { background: #002266; transform: translate(-2px, 2px); }
+    100% { background: #00081a; transform: translate(0, 0); }
+}
+
+.glitch-text {
+    color: #00f0ff;
+    font-family: 'VT323', monospace;
+    font-size: clamp(20px, 5vw, 36px);
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР */
+.interrogation-page {
+    width: 100%;
+    max-width: 580px;
+    position: relative;
+    z-index: 10;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #3b5f9e;
+    border-bottom: 1px solid rgba(30, 80, 160, 0.4);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-family: 'VT323', monospace;
+}
+
+.status-blue {
+    color: #00aaff;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink { from { opacity: 0.3; } to { opacity: 1; } }
+
+/* КАРТОЧКА ТЕРМИНАЛА */
+.terminal-box {
+    background: rgba(4, 14, 32, 0.85);
+    border: 1px solid rgba(0, 150, 255, 0.3);
+    border-radius: 4px;
+    padding: 25px 20px;
+    box-shadow: 0 0 35px rgba(0, 80, 200, 0.15);
+    position: relative;
+}
+
+.file-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-bottom: 15px;
+}
+
+.badge {
+    background: rgba(0, 100, 220, 0.2);
+    border: 1px solid #0066cc;
+    color: #66b3ff;
+    padding: 2px 6px;
+}
+
+.file-id { color: #3b5f9e; }
+
+.scanner-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00d2ff, transparent);
+    margin-bottom: 20px;
+    animation: scan 2s infinite linear;
+}
+
+@keyframes scan {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+/* ТЕКСТ ДОПРОСА */
+.sys-msg {
+    font-size: 11px;
+    color: #4a73b8;
+    margin-bottom: 4px;
+}
+
+.main-question {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.q-prefix {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #0099ff;
+}
+
+h1 {
+    font-size: clamp(36px, 8vw, 54px);
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 170, 255, 0.6);
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* ФОРМА ВВОДА */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(2, 8, 20, 0.9);
+    border: 1px solid #0055aa;
+    padding: 10px 14px;
+    border-radius: 2px;
+    transition: border-color 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+.prompt {
+    color: #00d2ff;
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
+}
+
+button {
+    background: linear-gradient(180deg, #0055b3 0%, #002b66 100%);
+    border: 1px solid #0088ff;
+    color: #ffffff;
+    font-family: inherit;
+    padding: 12px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover, button:active {
+    background: #0066e6;
+    box-shadow: 0 0 15px rgba(0, 136, 255, 0.5);
+}
+
+/* ОКТИВНЫЕ ОТВЕТЫ */
+.response-box {
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(180, 20, 40, 0.15);
+    border: 1px solid #ff3355;
+    color: #ff6680;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    animation: fadeIn 0.3s ease;
+}
+
+.hidden { display: none !important; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ФИНАЛЬНЫЙ ЭКРАН */
+.final-screen {
+    position: fixed;
+    inset: 0;
+    background: rgba(1, 6, 18, 0.96);
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.final-card {
+    background: #041026;
+    border: 1.5px solid #00aaff;
+    padding: 30px 20px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 0 40px rgba(0, 150, 255, 0.25);
+}
+
+.code-tag {
+    font-size: 10px;
+    color: #00d2ff;
+    letter-spacing: 2px;
+}
+
+.status-msg {
+    font-size: 11px;
+    color: #5282d1;
+    margin-top: 8px;
+}
+
+.final-verdict {
+    font-size: 42px;
+    color: #ffffff;
+    text-shadow: 0 0 20px #00aaff;
+    margin: 15px 0;
+    letter-spacing: 3px;
+}
+
+.blue-line {
+    width: 60px;
+    height: 2px;
+    background: #00d2ff;
+    margin: 15px auto;
+}
+
+.final-subtext {
+    font-size: 12px;
+    color: #8faedc;
+    line-height: 1.4;
+}
+
+.blue-stamp {
+    display: inline-block;
+    border: 2px solid #00d2ff;
+    color: #00d2ff;
+    padding: 6px 14px;
+    font-size: 12px;
+    transform: rotate(-6deg);
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+.back-btn {
+    display: block;
+    padding: 12px;
+    background: rgba(0, 100, 220, 0.2);
+    border: 1px solid #00aaff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: background 0.3s;
+}
+
+.back-btn:hover { background: #0088ff; }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: #2b497a;
+    margin-top: 25px;
+}

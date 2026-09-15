@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fffbeb;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #451a03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+#sparkles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.scene {
+    position: relative;
+    z-index: 1;
+    perspective: 1000px;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* 3D КОНВЕРТ */
+.envelope {
+    width: 320px;
+    height: 220px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.env-back {
+    position: absolute;
+    inset: 0;
+    background: #fde68a;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(180, 83, 9, 0.15);
+}
+
+/* Лист с текстом внутри конверта */
+.letter {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    right: 15px;
+    height: 190px;
+    background: #fffffc;
+    border-radius: 8px;
+    padding: 25px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.5s ease;
+}
+
+/* ПОСЛЕ КЛИКА: Письмо отделяется и проявляется как аккуратная карточка */
+.letter-card-full {
+    display: none;
+    width: 100%;
+    max-width: 680px;
+    background: #fffffc;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 50px rgba(180, 83, 9, 0.15);
+    border: 1px solid #fef08a;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.letter-card-full.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.letter-inner {
+    line-height: 1.8;
+    font-size: 0.98rem;
+    color: #78350f;
+}
+
+.letter-inner p {
+    margin-bottom: 18px;
+}
+
+.greeting {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.love-declaration {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #d97706;
+    margin: 40px 0 20px;
+}
+
+.footer-action {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.restart-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #b45309;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 20px;
+    background: #fef3c7;
+    transition: 0.3s;
+}
+
+.restart-btn:hover {
+    background: #fde68a;
+}
+
+/* Стенки конверта */
+.env-front-left {
+    position: absolute;
+    inset: 0;
+    border-style: solid;
+    border-width: 110px 0 110px 160px;
+    border-color: transparent transparent transparent #fcd34d;
+    z-index: 3;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.env-front-right {
+    position: absolute;
+    inset: 0;
+    border-style: solid;
+    border-width: 110px 160px 110px 0;
+    border-color: transparent #fcd34d transparent transparent;
+    z-index: 3;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.env-front-bottom {
+    position: absolute;
+    inset: 0;
+    border-style: solid;
+    border-width: 0 160px 120px 160px;
+    border-color: transparent transparent #fbbf24 transparent;
+    z-index: 4;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.env-flap-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 120px 160px 0 160px;
+    border-color: #fde68a transparent transparent transparent;
+    transform-origin: top center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+}
+
+.env-flap-top.open {
+    transform: rotateX(-180deg);
+    z-index: 1;
+}
+
+/* ПЕЧАТЬ L+N */
+.wax-seal {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 35% 35%, #fbbf24, #b45309);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.4);
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.wax-seal:hover {
+    transform: translateX(-50%) scale(1.08);
+}
+
+.wax-seal span {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #fff8f1;
+    font-size: 1.1rem;
+}
+
+/* ПОДСКАЗКА ПОД КОНВЕРТОМ */
+.tap-hint {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: #b45309;
+    letter-spacing: 1px;
+    transition: opacity 0.4s ease;
+    animation: pulse 2s infinite;
+}
+
+.seal-shard {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #d97706;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}

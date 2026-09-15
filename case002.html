@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+   <title>ДЕЛО №002 // $0$414</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="case002.css">
+</head>
+
+<body>
+
+<div class="blue-noise"></div>
+<div class="scanlines"></div>
+<div class="glitch-screen" id="glitch-screen">
+    <div class="glitch-text">CRITICAL_SYSTEM_ERROR<br>0x000000FF // INVALID_RESPONSE</div>
+</div>
+
+<main class="interrogation-page">
+
+   <header class="top-bar">
+    <div>PROTOCOL // QUESTIONING</div>
+    <div class="status-blue">● ANALYSIS_ACTIVE</div>
+    <div>FILE // $0$414</div>
+</header>
+
+    <section class="terminal-box">
+
+        <div class="file-header">
+            <span class="badge">RESTRICTED_QUESTION</span>
+            <span class="file-id">CASE_002</span>
+        </div>
+
+        <div class="scanner-line"></div>
+
+        <div class="dialog-area">
+            <p class="sys-msg">[SYSTEM]: Инициализация полиграфа...</p>
+            <p class="sys-msg">[SYSTEM]: Объект зафиксирован. Отвечайте честно.</p>
+            
+            <div class="main-question">
+                <span class="q-prefix">ВОПРОС:</span>
+                <h1 id="question-text">Сосала?</h1>
+            </div>
+        </div>
+
+        <!-- Поле ввода ответа -->
+        <form id="answer-form" class="input-container" autocomplete="off">
+            <div class="input-wrapper">
+                <span class="prompt">&gt;</span>
+                <input type="text" id="answer-input" placeholder="Введите ответ..." autofocus required>
+            </div>
+            <button type="submit" id="submit-btn">ОТПРАВИТЬ</button>
+        </form>
+
+        <!-- Ответ терминала -->
+        <div id="response-box" class="response-box hidden">
+            <p id="response-text"></p>
+        </div>
+
+    </section>
+
+    <!-- Финальный экран после "Да" -->
+    <section id="final-screen" class="final-screen hidden">
+        <div class="final-card">
+            <div class="code-tag">VERIFICATION COMPLETE</div>
+            
+            <p class="status-msg">ПРОТОКОЛ ДОПРОСА ЗАКРЫТ</p>
+
+            <h2 class="final-verdict">УСЛЫШАЛ.</h2>
+
+            <div class="blue-line"></div>
+
+            <p class="final-subtext">
+                Ответ занесён в протокол.<br>
+                Искренность объекта: 100%.
+            </p>
+
+            <div class="blue-stamp">
+                ОБЪЕКТ<br>ПРИЗНАЛСЯ
+            </div>
+
+            <a href="jokes.html" class="back-btn">
+                ← ВЕРНУТЬСЯ В АРХИВ
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <span>SECURE TERMINAL V2.0</span>
+        <span>002 / 007</span>
+    </footer>
+
+</main>
+
+<script src="case002.js"></script>
+
+</body>
+</html>

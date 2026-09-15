@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ДЕЛО №005 // RUPTURE_05</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="case005.css">
+</head>
+
+<body>
+
+<div class="dark-noise"></div>
+<div class="scanlines"></div>
+
+<main class="rupture-page">
+
+    <header class="top-bar">
+        <div>INTEGRITY // TEST</div>
+        <div class="status-red">● CRITICAL_STATE</div>
+        <div>FILE // RUPTURE_05</div>
+    </header>
+
+    <section class="rupture-card">
+
+        <div class="card-header">
+            <span class="tag">SUBJECT_DESTRUCTION</span>
+            <span class="status-tag">ИЗНОС: <span id="rip-percent">0%</span></span>
+        </div>
+
+        <h1 class="title">РАЗРЫВ НОСИТЕЛЯ</h1>
+        <p class="subtitle">Потяните сторону фотографии для разделения объекта...</p>
+
+        <!-- ЗОНА РАЗРЫВАЕМОЙ ФОТОГРАФИИ -->
+        <div class="photo-rip-stage" id="stage">
+            
+            <div class="photo-wrapper">
+                <!-- Левая половина -->
+                <div class="photo-half left-half" id="left-half">
+                    <img src="images/nastya.jpg" alt="Настя">
+                    <div class="tear-edge right-edge"></div>
+                </div>
+
+                <!-- Правая половина (которую нужно тянуть) -->
+                <div class="photo-half right-half" id="right-half">
+                    <img src="images/nastya.jpg" alt="Настя">
+                    <div class="tear-edge left-edge"></div>
+                    <div class="drag-handle">◄ ПОТЯНИ ►</div>
+                </div>
+
+                <!-- Красная линия надрыва по центру -->
+                <div class="rip-line" id="rip-line"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ФИНАЛЬНЫЙ ЭКРАН (ПОСЛЕ РАЗРЫВА) -->
+    <div id="final-overlay" class="final-overlay hidden">
+        <div class="red-flash"></div>
+        <div class="final-modal">
+            <div class="modal-code">CRITICAL FAILURE // SUBJECT DISRUPTED</div>
+            
+            <h2 class="final-title">ОБЪЕКТ "НАСТЯ"<br>ПОРВАЛСЯ!</h2>
+            
+            <div class="red-line"></div>
+
+            <p class="final-desc">
+                Структура объекта полностью нарушена.<br>
+                Фрагменты занесены в архив уничтоженных файлов.
+            </p>
+
+            <div class="red-stamp">
+                ОБЪЕКТ<br>УНИЧТОЖЕН
+            </div>
+
+            <a href="jokes.html" class="back-btn">
+                ← ВЕРНУТЬСЯ В АРХИВ
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <span>CONFIDENTIAL LOG</span>
+        <span>005 / 007</span>
+    </footer>
+
+</main>
+
+<script src="case005.js"></script>
+
+</body>
+</html>

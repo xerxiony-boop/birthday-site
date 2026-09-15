@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ДЕЛО №003 // СЛИВ №1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="case003.css">
+</head>
+
+<body>
+
+<div class="purple-noise"></div>
+<div class="scanlines"></div>
+
+<main class="leak-page">
+
+    <header class="top-bar">
+        <div>MEDIA_DECRYPT // 003</div>
+        <div class="status-pink">● LEAK_DETECTED</div>
+        <div>FILE // LEAK_01</div>
+    </header>
+
+    <section class="leak-card">
+
+        <div class="card-header">
+            <span class="tag">RESTRICTED MEDIA</span>
+            <span class="id">DECRYPT_LEVEL: <span id="percent-text">0%</span></span>
+        </div>
+
+        <h1 class="title">СЛИВ №1</h1>
+        <p class="subtitle">Инициализация расшифровки фотоматериала...</p>
+
+        <!-- ЗОНА ФОТОГРАФИИ C ЦЕНЗУРОЙ -->
+        <div class="photo-container">
+            <!-- Укажи точное имя файла картинки из папки images -->
+            <img src="images/photo.jpg" alt="Слив №1" id="target-photo" class="blurred-photo">
+            
+            <div id="censor-bar" class="censor-overlay">
+                <div class="censor-text">TOP SECRET // CENSOR</div>
+            </div>
+        </div>
+
+        <!-- ОРГАНЫ УПРАВЛЕНИЯ ДЕШИФРОВКОЙ -->
+        <div class="controls">
+            <p class="control-label">ПЕРЕДВИНЬТЕ ПОЛЗУНОК ДЛЯ СНЯТИЯ ЦЕНЗУРЫ:</p>
+            <input type="range" id="decrypt-slider" min="0" max="100" value="0" class="slider">
+            
+            <div class="btn-group">
+                <button id="auto-decrypt-btn" class="action-btn">⚡ АВТО-ВЗЛОМ</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ФИНАЛЬНЫЙ ОВЕРЛЕЙ -->
+    <div id="final-overlay" class="final-overlay hidden">
+        <div class="final-modal">
+            <div class="modal-code">DECRYPT SUCCESSFUL // 100%</div>
+            
+            <h2>МАТЕРИАЛ РАССЕКРЕЧЕН!</h2>
+            
+            <p class="final-desc">
+                Первый слив успешно обработан и сохранён в личное дело.
+            </p>
+
+            <div class="pink-stamp">
+                СЛИВ №1<br>ДОСТУПЕН
+            </div>
+
+            <a href="jokes.html" class="back-btn">
+                ← ВЕРНУТЬСЯ В АРХИВ
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <span>CONFIDENTIAL CONTENT</span>
+        <span>003 / 007</span>
+    </footer>
+
+</main>
+
+<script src="case003.js"></script>
+
+</body>
+</html>

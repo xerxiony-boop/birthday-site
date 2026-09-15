@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ДЕЛО №006 // MEMORY_SCAN</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="case006.css">
+</head>
+
+<body>
+
+<div class="green-noise"></div>
+<div class="scanlines"></div>
+
+<main class="memory-page">
+
+    <header class="top-bar">
+        <div>NEURAL_LINK // MEMORY_CHECK</div>
+        <div class="status-green">● SCANNER_ONLINE</div>
+        <div>FILE // MEMORY_SCAN</div>
+    </header>
+
+    <section class="memory-card">
+
+        <div class="card-header">
+            <span class="tag">SYNAPSE_VERIFICATION</span>
+            <span class="progress-tag">ПРОГРЕСС: <span id="step-num">1</span>/3</span>
+        </div>
+
+        <h1 class="title">СКАНЕР ПАМЯТИ</h1>
+        <p class="subtitle">Подтвердите подлинность воспоминаний для доступа к финалу.</p>
+
+        <!-- СПИСОК ВОПРОСОВ (ПОСЛЕДОВАТЕЛЬНЫЙ ВЫВОД) -->
+        <div class="q-list">
+
+            <!-- ВОПРОС 1 -->
+            <div class="q-block active" id="q1-block">
+                <div class="q-header">
+                    <span class="q-num">МАРКЕР #1</span>
+                    <span class="q-status" id="q1-status">● АКТИВЕН</span>
+                </div>
+                <p class="q-text">Как зовут моего кота?</p>
+                <div class="q-hint">💡 Подсказка: от слова «Фортуна»</div>
+                <form class="q-form" id="form-1" autocomplete="off">
+                    <div class="input-line">
+                        <span class="p-symbol">&gt;</span>
+                        <input type="text" id="ans-1" placeholder="Введите имя..." autofocus required>
+                    </div>
+                    <button type="submit" class="send-btn">ПОДТВЕРДИТЬ</button>
+                </form>
+            </div>
+
+            <!-- ВОПРОС 2 -->
+            <div class="q-block locked" id="q2-block">
+                <div class="q-header">
+                    <span class="q-num">МАРКЕР #2</span>
+                    <span class="q-status" id="q2-status">🔒 ЗАБЛОКИРОВАНО</span>
+                </div>
+                <p class="q-text">Как зовут мою собаку?</p>
+                <div class="q-hint">💡 Подсказка: от слова «Мир»</div>
+                <form class="q-form" id="form-2" autocomplete="off">
+                    <div class="input-line">
+                        <span class="p-symbol">&gt;</span>
+                        <input type="text" id="ans-2" placeholder="Введите имя..." disabled required>
+                    </div>
+                    <button type="submit" class="send-btn" disabled>ПОДТВЕРДИТЬ</button>
+                </form>
+            </div>
+
+            <!-- ВОПРОС 3 -->
+            <div class="q-block locked" id="q3-block">
+                <div class="q-header">
+                    <span class="q-num">МАРКЕР #3</span>
+                    <span class="q-status" id="q3-status">🔒 ЗАБЛОКИРОВАНО</span>
+                </div>
+                <p class="q-text">Когда день рождения у моей мамы?</p>
+                <div class="q-hint">💡 Подсказка: Число — твоё число ДР. Месяц — месяц ДР сестры. Год: 100 - 16</div>
+                <form class="q-form" id="form-3" autocomplete="off">
+                    <div class="input-line">
+                        <span class="p-symbol">&gt;</span>
+                        <input type="text" id="ans-3" placeholder="ДД.ММ.ГГ (напр. 26.04.84)..." disabled required>
+                    </div>
+                    <button type="submit" class="send-btn" disabled>ПОДТВЕРДИТЬ</button>
+                </form>
+            </div>
+
+        </div>
+
+        <p id="error-msg" class="error-msg hidden">ОШИБКА ДАННЫХ! НЕВЕРНЫЙ МАРКЕР.</p>
+
+    </section>
+
+    <!-- ФИНАЛЬНЫЙ ОВЕРЛЕЙ -->
+    <div id="final-overlay" class="final-overlay hidden">
+        <div class="final-modal">
+            <div class="modal-code">MEMORY MATCHED // 100% ACCURACY</div>
+            
+            <h2>ПАМЯТЬ ПОДТВЕРЖДЕНА!</h2>
+            
+            <p class="final-desc">
+                Все нейронные маркеры совпадают.<br>
+                Финальный замок Архива готов к снятию.
+            </p>
+
+            <div class="green-stamp">
+                ПОСЛЕДНИЙ ШАГ<br>РАЗБЛОКИРОВАН
+            </div>
+
+            <a href="jokes.html" class="back-btn">
+                ← ВЕРНУТЬСЯ В АРХИВ
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <span>SYNAPSE VERIFIED</span>
+        <span>006 / 007</span>
+    </footer>
+
+</main>
+
+<script src="case006.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ДЕЛО №001 // ПРОФУРСЕТКА</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="profursetka.css">
+</head>
+
+<body>
+
+<!-- Атмосферные шумы и сужение обзора -->
+<div class="noise"></div>
+<div class="scanlines"></div>
+<div class="vignette-darkness" id="vignette"></div>
+
+<main class="case-page" id="case-page">
+
+    <header class="top">
+        <div>SYS_LOG // 001</div>
+        <div class="status blink">● RECORDING</div>
+        <div>CLEARANCE L-1</div>
+    </header>
+
+    <section class="case-intro">
+        <div class="file-number">FILE #001</div>
+        <p class="classified">█ СЕКРЕТНО █</p>
+        
+        <h1 class="glitch-title" data-text="ПРОФУРСЕТКА">ПРОФУРСЕТКА</h1>
+        <div class="line"></div>
+
+        <p class="description">
+            Объект обнаружен внутри системы.<br>
+            Поведение проявляет признаки непредсказуемости.
+        </p>
+
+        <p class="small-warning">
+            ⚠ ВЗАИМОДЕЙСТВИЕ КРАЙНЕ НЕ РЕКОМЕНДУЕТСЯ ⚠
+        </p>
+    </section>
+
+    <!-- Игровая зона -->
+    <section class="experiment">
+        <div class="counter-label">УРОВЕНЬ ВЗАИМОДЕЙСТВИЯ</div>
+
+        <div class="counter">
+            <span id="count">0</span>
+            <span class="total">/ 100</span>
+        </div>
+
+        <div class="button-area">
+            <div class="pulse-ring circle-1"></div>
+            <div class="pulse-ring circle-2"></div>
+            
+            <button id="click-button">
+                <span>НАЖАТЬ</span>
+            </button>
+        </div>
+
+        <p id="hint" class="hint">Инициализация протокола взаимодействия...</p>
+    </section>
+
+    <!-- Слой для спама предупреждающих надписей -->
+    <div id="warning-layer" class="warning-layer"></div>
+
+    <!-- Финальный скример-экран (Появляется на 100) -->
+    <section id="final-screen" class="final-screen">
+        <div class="final-noise"></div>
+        
+        <div class="final-content">
+            <div class="final-code">CRITICAL ALERT // ANOMALY DETECTED</div>
+            
+            <p class="final-small">ОБЪЕКТ ИДЕНТИФИЦИРОВАН И ЗАФИКСИРОВАН</p>
+
+            <h2 class="final-title">
+                ПРОФУРСЕТКА<br>
+                ОБНАРУЖЕНА!!!
+            </h2>
+
+            <div class="final-line"></div>
+
+            <p class="final-text">
+                Протокол завершён.<br>
+                Статус объекта переведён в реестр квеста.
+            </p>
+
+            <div class="stamp-box">
+                ПРОФУРСЕТКА<br>
+                100%
+            </div>
+
+            <a href="jokes.html" id="back-button" class="back-btn">
+                ← ВЕРНУТЬСЯ В АРХИВ
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <span>ANOMALY DETECTED // CASE 001</span>
+        <span>STATUS: UNSTABLE</span>
+    </footer>
+
+</main>
+
+<script src="profursetka.js"></script>
+
+</body>
+</html>

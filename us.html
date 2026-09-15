@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Наше «мы»</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="us.css">
+</head>
+<body>
+
+    <!-- Фоновые эффекты -->
+    <div id="particles-container" class="particles-container"></div>
+    <div class="ambient-glow primary"></div>
+    <div class="ambient-glow secondary"></div>
+
+    <main class="us-container">
+
+        <!-- ЦЕНТРАЛЬНЫЙ ЗАГОЛОВОК И СЧЁТЧИК -->
+        <header class="center-header animate">
+            <p class="small-label">наше</p>
+            <h1>«мы»</h1>
+            <div class="divider"></div>
+            <p class="date">28.07.202 · 04:11</p>
+            <div class="together-timer" id="together-timer">Считаем наши дни...</div>
+        </header>
+
+        <!-- СЕТКА ИСТОРИИ -->
+        <div class="story-grid">
+
+            <!-- 1. ПРЕДЛОЖЕНИЕ ВСТРЕЧАТЬСЯ -->
+            <section class="fragment proposal animate">
+                <div class="photo-card tilt-card clickable-photo" data-caption="С одного вопроса началось наше «мы».">
+                    <img src="images/relationship-proposal.jpg" alt="Момент, когда мы начали встречаться">
+                </div>
+                <p class="fragment-title">
+                    С одного вопроса<br>
+                    началось наше «мы».
+                </p>
+            </section>
+
+            <!-- 2. НОЧЁВКА -->
+            <section class="fragment sleepover animate">
+                <div class="photo-card tilt-card clickable-photo" data-caption="Свои вечера. Свои ночёвки.">
+                    <img src="images/sleepover.jpg" alt="Наша ночёвка">
+                </div>
+                <p class="fragment-title">
+                    Свои вечера.<br>
+                    Свои ночёвки.
+                </p>
+            </section>
+
+            <!-- 3. МЫ ВМЕСТЕ -->
+            <section class="fragment together animate">
+                <div class="photo-card tilt-card clickable-photo" data-caption="Просто быть рядом.">
+                    <img src="images/us-together.jpg" alt="Мы вместе">
+                </div>
+                <p class="fragment-title">
+                    Просто быть рядом.
+                </p>
+            </section>
+
+            <!-- 4. ЧЕТЫРЕ МАЛЕНЬКИХ ФОТО С САЛЮТОМ ИЗ СЕРДЕЧЕК -->
+            <section class="fragment little-moments animate">
+                <div class="little-grid">
+                    <div class="little-photo photo-one tilt-card">
+                        <img src="images/masks-1.jpg" alt="Наш момент" class="clickable-photo heart-trigger" data-caption="Наши смешные моменты 🤍">
+                    </div>
+                    <div class="little-photo photo-two tilt-card">
+                        <img src="images/masks-2.jpg" alt="Наш момент" class="clickable-photo heart-trigger" data-caption="Наши смешные моменты 🤍">
+                    </div>
+                    <div class="little-photo photo-three tilt-card">
+                        <img src="images/drawing-1.jpg" alt="Наш рисунок" class="clickable-photo heart-trigger" data-caption="Наше творчество ✨">
+                    </div>
+                    <div class="little-photo photo-four tilt-card">
+                        <img src="images/drawing-2.jpg" alt="Наш рисунок" class="clickable-photo heart-trigger" data-caption="Наше творчество ✨">
+                    </div>
+                </div>
+                <p class="fragment-title">
+                    И целая куча моментов,<br>
+                    которые понятны только нам.
+                </p>
+            </section>
+
+        </div>
+
+        <!-- ФИНАЛ И КНОПКА -->
+        <footer class="ending animate">
+            <p>
+                Из таких моментов<br>
+                и складывается наше «мы».
+            </p>
+
+            <a href="jokes.html" class="button js-next-btn">
+                <span>и это только начало →</span>
+            </a>
+        </footer>
+
+    </main>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА СНИМКОВ -->
+    <div id="photo-modal" class="photo-modal">
+        <div class="modal-content">
+            <img src="" alt="Увеличенное фото" id="modal-img">
+            <p class="modal-caption-text" id="modal-caption"></p>
+            <p class="modal-close-text">Нажми в любом месте, чтобы закрыть</p>
+        </div>
+    </div>
+
+    <script src="us.js"></script>
+</body>
+</html>

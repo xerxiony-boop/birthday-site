@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Наша первая встреча</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="walk.css">
+</head>
+<body>
+
+    <!-- Фоновые эффекты -->
+    <div id="particles-container" class="particles-container"></div>
+    <div class="ambient-glow primary"></div>
+    <div class="ambient-glow secondary"></div>
+
+    <main class="story">
+
+        <section class="intro">
+            <div class="star-icon js-spark-trigger" title="Нажми">✨</div>
+
+            <p class="line animate delay-1">
+                И вот настал тот самый день...
+            </p>
+
+            <p class="line second animate delay-2">
+                Волнение улетучилось в первую же секунду, уступив место бесконечному теплу и счастью.
+            </p>
+
+            <!-- Музыкальный акцент с волнами -->
+            <div class="audio-vibe-badge animate delay-3">
+                <div class="sound-wave">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <span class="badge-text">Одна музыка на двоих</span>
+            </div>
+        </section>
+
+        <!-- Галерея из двух карточек -->
+        <section class="gallery-section animate delay-4">
+            
+            <div class="cards-grid">
+                <!-- Первая карточка -->
+                <div class="photo-card tilt-left animate delay-5 js-tilt">
+                    <div class="tape-corner"></div>
+                    <div class="photo-inner">
+                        <img src="images/walk-1.jpg" alt="Первая встреча" class="clickable-photo" data-caption="И вот мы уже просто сидим рядом. В наушниках, каждый со своими мыслями, но всё равно вместе.">
+                        <p class="card-caption">
+                            И вот мы уже просто сидим рядом.<br>
+                            В наушниках, каждый со своими мыслями,<br>
+                            но всё равно вместе. 🎧
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Разделительный романтический коннектор -->
+                <div class="card-divider animate delay-6">
+                    <span class="divider-line"></span>
+                    <span class="divider-heart">🤍</span>
+                    <span class="divider-line"></span>
+                </div>
+
+                <!-- Вторая карточка -->
+                <div class="photo-card tilt-right animate delay-7 js-tilt">
+                    <div class="tape-corner"></div>
+                    <div class="photo-inner">
+                        <img src="images/walk-2.jpg" alt="Прогулка вместе" class="clickable-photo" data-caption="А потом таких моментов стало больше. Без особого повода. Просто потому что хотелось быть рядом.">
+                        <p class="card-caption">
+                            А потом таких моментов стало больше.<br>
+                            Без особого повода.<br>
+                            Просто потому что хотелось быть рядом. ✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="zoom-hint animate delay-8">🔍 Нажми на любое фото, чтобы рассмотреть</div>
+
+            <p class="after animate delay-9">
+                Мы гуляли часами, не замечая времени вокруг,<br>
+                <em>понимая, что впереди у нас ещё целая вечность.</em> 💫
+            </p>
+        </section>
+
+        <!-- Кнопка перехода к финальной странице -->
+      <a href="us.html" class="button js-next-btn animate delay-10">
+    <span>Продолжение... →</span>
+</a>
+    </main>
+
+    <!-- Модальное окно просмотра фото -->
+    <div id="photo-modal" class="photo-modal">
+        <div class="modal-content">
+            <img src="" alt="Увеличенное фото" id="modal-img">
+            <p class="modal-caption-text" id="modal-caption"></p>
+            <p class="modal-close-text">Нажми в любом месте, чтобы закрыть</p>
+        </div>
+    </div>
+
+    <script src="walk.js"></script>
+</body>
+</html>

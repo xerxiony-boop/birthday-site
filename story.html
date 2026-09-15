@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>С этого всё началось</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="story.css">
+</head>
+<body>
+
+    <!-- Фоновые эффекты -->
+    <div id="particles-container" class="particles-container"></div>
+    <div class="ambient-glow primary"></div>
+    <div class="ambient-glow secondary"></div>
+
+    <main class="story">
+
+        <section class="intro">
+            <div class="star-icon js-spark-trigger" title="Нажми">✦</div>
+
+            <p class="line animate delay-1">
+                Ты хотела написать мне ещё давно...
+            </p>
+
+            <p class="line second animate delay-2">
+                Но почему-то решилась только тогда.
+            </p>
+
+            <div class="date-badge animate delay-3">
+                <span class="date-line"></span>
+                <span class="date-text">04.02.2026</span>
+                <span class="date-line"></span>
+            </div>
+
+            <p class="caption animate delay-4">
+                С этого сообщения началась наша история
+            </p>
+        </section>
+
+        <section class="message animate delay-5">
+            <div class="photo-frame">
+                <div class="photo-glow"></div>
+                <img src="images/first-message.jpg" alt="Наше первое сообщение" class="clickable-photo">
+                <div class="zoom-hint">🔍 Нажми, чтобы приблизить</div>
+            </div>
+
+            <p class="after animate delay-6">
+                Тогда мы ещё даже не догадывались,<br>
+                во что перерастёт этот простой диалог... ✨
+            </p>
+        </section>
+
+        <a href="distance.html" class="button js-next-btn animate delay-7">
+            <span>Продолжить →</span>
+        </a>
+
+    </main>
+
+    <!-- Модальное окно для просмотра фото -->
+    <div id="photo-modal" class="photo-modal">
+        <div class="modal-content">
+            <img src="" alt="Увеличенное фото" id="modal-img">
+            <p class="modal-close-text">Нажми в любом месте, чтобы закрыть</p>
+        </div>
+    </div>
+
+    <!-- Подключаем персональный скрипт story.js -->
+    <script src="story.js"></script>
+</body>
+</html>

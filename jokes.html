@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>ПРОТОКОЛ // ДОСТУП ЗАПРЕЩЁН</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=VT323&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="jokes.css">
+</head>
+
+<body>
+
+<!-- ЭФФЕКТЫ ПОМЕХ И ШУМА -->
+<div class="screen-noise"></div>
+<div class="scanlines"></div>
+<div class="glitch-overlay" id="glitch-overlay"></div>
+
+<main class="archive" id="archive-main">
+
+    <!-- ВЕРХНЯЯ СТРОКА ТЕРМИНАЛА -->
+    <header class="top-bar">
+        <div>SYS_ERR // 0x008F</div>
+        <div class="blink-red">● СИСТЕМА ВЗЛОМАНА</div>
+        <div>REC: 2006–2026</div>
+    </header>
+
+    <!-- СЕКЦИЯ ЗАГОЛОВКА -->
+    <section class="intro">
+        <div class="file-stamp">
+            <span>RESTRICTED</span>
+            <span>CLEARANCE L-5</span>
+        </div>
+
+        <p class="overline">ЗАБЛОКИРОВАННЫЙ СЕКТОР</p>
+
+        <!-- НОВОЕ МРАЧНОЕ НАЗВАНИЕ -->
+        <h1 class="glitch-title" data-text="ANOMALY // VOID">ANOMALY // VOID</h1>
+
+        <div class="title-line"></div>
+
+        <p class="subtitle">
+            Записи, зафиксировавшие аномальные вспышки.<br>
+            Удаление файла невозможно.
+        </p>
+
+        <div class="warning-box">
+            <span class="skull">☠</span>
+            ВНИМАНИЕ: ПОПЫТКА ПРОСМОТРА КЛАССИФИЦИРУЕТСЯ КАК НАРУШЕНИЕ
+            <span class="skull">☠</span>
+        </div>
+    </section>
+
+    <!-- СЧЁТЧИК И СТАТУС БЕЗОПАСНОСТИ -->
+    <section class="archive-info">
+        <div>
+            <span>ИЗОЛИРОВАНО ДЕЛ</span>
+            <strong id="progress-counter">00 / 07</strong>
+        </div>
+
+        <div>
+            <span>УРОВЕНЬ УГРОЗЫ</span>
+            <strong class="danger-text" id="archive-status">CRITICAL</strong>
+        </div>
+
+        <div>
+            <span>СИГНАЛ ОБЪЕКТА</span>
+            <strong class="pulse-green">АКТИВЕН</strong>
+        </div>
+    </section>
+
+    <!-- 8 КАРТОЧЕК ДЕЛ -->
+    <section class="cases">
+
+        <!-- ДЕЛО 001 -->
+        <a href="profursetka.html" class="case" data-case="1" data-title="ПРОФУРСЕТКА" data-link="profursetka.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №001</span>
+                <span class="status">LOCKED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#001</div>
+                <h2 class="case-name">████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    Первичный аномальный контакт.<br>
+                    Поведение объекта не поддаётся законам логики.
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>УГРОЗА</span>
+                <span class="danger-level">HIGH</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+
+      <!-- ДЕЛО 002 -->
+        <a href="case002.html" class="case" data-case="2" data-title="$0$414" data-link="case002.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №002</span>
+                <span class="status">LOCKED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#002</div>
+                <h2 class="case-name">████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    Протокол допроса №0414.<br>
+                    Попытка проверки объекта на искренность.
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>ПРОТОКОЛ</span>
+                <span class="status-text">ПОЛИГРАФ</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+      <!-- ДЕЛО 003 -->
+        <a href="case003.html" class="case" data-case="3" data-title="СЛИВ №1" data-link="case003.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №003</span>
+                <span class="status">LOCKED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#003</div>
+                <h2 class="case-name">████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    Перехваченный фотоматериал.<br>
+                    Требуется ручная дешифровка и снятие цензуры.
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>МЕДИАФАЙЛ</span>
+                <span class="status-text">CLASSIFIED</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+
+       <!-- ДЕЛО 004 -->
+        <a href="case004.html" class="case" data-case="4" data-title="IDENT_041" data-link="case004.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №004</span>
+                <span class="status">LOCKED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#004</div>
+                <h2 class="case-name">████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    База данных требует подтверждения.<br>
+                    Введите зафиксированные позывные объекта.
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>ИДЕНТИФИКАЦИЯ</span>
+                <span class="status-text">CLASSIFIED</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+
+      <!-- ДЕЛО 005 -->
+        <a href="case005.html" class="case" data-case="5" data-title="RUPTURE_05" data-link="case005.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №005</span>
+                <span class="status">LOCKED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#005</div>
+                <h2 class="case-name">████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    Нарушение целостности носителя.<br>
+                    Требуется физическое разделение объекта.
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>ПРОТОКОЛ</span>
+                <span class="status-text">DESTRUCTION</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+
+        <!-- ДЕЛО 006 -->
+        <a href="case006.html" class="case" data-case="6" data-title="CASE_006" data-link="case006.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №006</span>
+                <span class="status">LOCKED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#006</div>
+                <h2 class="case-name">████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    Финальный этап тестирования.<br>
+                    Ожидание данных...
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>ТЕСТ</span>
+                <span class="status-text">PENDING</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+
+       <!-- ФИНАЛ №007 -->
+        <a href="case007.html" class="case final-card" data-case="7" data-title="Неописуемая красота" data-link="case007.html">
+            <div class="case-top">
+                <span>ОБЪЕКТ №007</span>
+                <span class="status">RESTRICTED</span>
+            </div>
+            <div class="case-body">
+                <div class="number">#007</div>
+                <h2 class="case-name">██████████████████</h2>
+                <div class="separator"></div>
+                <p class="case-desc">
+                    Самый ценный кадр этой вселенной.<br>
+                    Архив, в котором живет главное волшебство.
+                </p>
+            </div>
+            <div class="case-bottom">
+                <span>СЕКРЕТНО</span>
+                <span class="status-text">ONLY_HER</span>
+            </div>
+            <div class="lock-icon">🔒</div>
+        </a>
+        
+    </section>
+
+    <!-- ПОДВАЛ С БЕГУЩЕЙ СТРОКОЙ И КНОПКАМИ -->
+    <footer>
+        <div class="ticker-wrap">
+            <div class="ticker">
+                ⚠ ВНИМАНИЕ: СИСТЕМА ФИКСИРУЕТ ПОПЫТКУ ВЗЛОМА // ЗАКРЫТЫЙ ПРОТОКОЛ // НЕ ОСТАВЛЯЙТЕ СТРАНИЦУ БЕЗ ПРИСМОТРА ⚠
+            </div>
+        </div>
+
+        <button id="reset-btn" class="reset-btn">⚙ [Сброс прогресса для теста]</button>
+
+        <a href="us.html" class="back-link">
+            ← ПОКИНУТЬ АРХИВ
+        </a>
+    </footer>
+
+</main>
+
+<script src="jokes.js"></script>
+
+</body>
+</html>

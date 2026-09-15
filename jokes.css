@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #050205;
+    color: #d1b8c0;
+    font-family: 'Special Elite', monospace;
+    position: relative;
+    overflow-x: hidden;
+    padding: 15px 10px 50px;
+}
+
+/* МРАЧНЫЙ CRT-ЭКРАН И ЭФФЕКТЫ */
+.screen-noise {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(90, 10, 30, 0.12) 0%, rgba(3, 1, 4, 0.92) 100%);
+    pointer-events: none;
+    z-index: 100;
+}
+
+.scanlines {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.4)
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 101;
+    opacity: 0.7;
+}
+
+/* ЭФФЕКТ СБОЯ/ГЛИТЧА ПРИ ОШИБКЕ */
+.glitch-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(180, 20, 30, 0.25);
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+body.glitch-active .glitch-overlay {
+    opacity: 1;
+}
+
+body.glitch-active #archive-main {
+    animation: shakeAnim 0.15s infinite;
+}
+
+@keyframes shakeAnim {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    20% { transform: translate(-3px, -2px) rotate(-0.5deg); }
+    40% { transform: translate(-1px, 2px) rotate(0.5deg); }
+    60% { transform: translate(3px, 1px) rotate(0deg); }
+    80% { transform: translate(-1px, -1px) rotate(-0.5deg); }
+    100% { transform: translate(2px, -2px) rotate(0deg); }
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР */
+.archive {
+    max-width: 880px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* ВЕРХНЯЯ ПАНЕЛЬ */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #663945;
+    border-bottom: 1px solid rgba(110, 30, 45, 0.4);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-family: 'VT323', monospace;
+}
+
+.blink-red {
+    color: #e63956;
+    animation: blinkFast 0.8s infinite alternate;
+}
+
+@keyframes blinkFast {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+/* ИНТРО И ЗАГОЛОВОК */
+.intro {
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.file-stamp {
+    position: absolute;
+    right: 0;
+    top: -12px;
+    border: 1.5px solid #8c1d31;
+    color: #b32742;
+    padding: 2px 6px;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(12deg);
+    background: rgba(10, 2, 5, 0.8);
+}
+
+.overline {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #8c5866;
+}
+
+h1.glitch-title {
+    font-size: clamp(32px, 8vw, 62px);
+    letter-spacing: 3px;
+    color: #ebd3d8;
+    text-shadow: 0 0 18px rgba(180, 20, 50, 0.5);
+    margin: 6px 0;
+}
+
+.title-line {
+    width: 80px;
+    height: 1px;
+    background: #8c1d31;
+    margin: 12px auto;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #9e7f87;
+    line-height: 1.4;
+}
+
+.warning-box {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(180, 40, 60, 0.5);
+    padding: 6px 12px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #e6526c;
+    background: rgba(80, 10, 25, 0.3);
+}
+
+/* БЛОК СЧЁТЧИКА */
+.archive-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: rgba(15, 4, 10, 0.85);
+    border: 1px solid rgba(100, 30, 45, 0.4);
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 9px;
+}
+
+.archive-info span {
+    display: block;
+    color: #734854;
+    margin-bottom: 4px;
+}
+
+.archive-info strong {
+    font-size: 13px;
+    color: #ebd3d8;
+}
+
+.danger-text { color: #e63956 !important; }
+.pulse-green { color: #32a869 !important; }
+
+/* СЕТКА КАРТОЧЕК */
+.cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+/* ЗАБЛОКИРОВАННАЯ КАРТОЧКА */
+.case {
+    position: relative;
+    background: rgba(12, 4, 8, 0.9);
+    border: 1px solid rgba(70, 20, 30, 0.6);
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 190px;
+    opacity: 0.5;
+    filter: grayscale(0.9);
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+}
+
+.case-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: #5e333e;
+}
+
+.case-body { margin: 12px 0; }
+
+.number {
+    font-size: 10px;
+    color: #7a2638;
+    margin-bottom: 4px;
+}
+
+h2.case-name {
+    font-size: 18px;
+    color: #ebd3d8;
+    letter-spacing: 1px;
+}
+
+.separator {
+    width: 25px;
+    height: 1px;
+    background: #4a1924;
+    margin: 8px 0;
+}
+
+.case-desc {
+    font-size: 11px;
+    color: #82636b;
+    line-height: 1.35;
+}
+
+.case-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: #5e333e;
+    border-top: 1px dashed rgba(80, 25, 35, 0.4);
+    padding-top: 8px;
+}
+
+.lock-icon {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* РАЗБЛОКИРОВАННАЯ КАРТОЧКА ДЛЯ ИГРЫ */
+.case.unlocked {
+    opacity: 1;
+    filter: none;
+    cursor: pointer;
+    border-color: rgba(180, 40, 60, 0.8);
+    background: rgba(28, 7, 15, 0.95);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.case.unlocked:hover, .case.unlocked:active {
+    border-color: #e63956;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(180, 30, 50, 0.3);
+}
+
+.case.unlocked .status { color: #e63956; font-weight: bold; }
+.case.unlocked .lock-icon { display: none; }
+
+/* ПРОЙДЕННАЯ КАРТОЧКА */
+.case.passed {
+    opacity: 0.85;
+    filter: none;
+    cursor: pointer;
+    border-color: rgba(45, 120, 75, 0.6);
+    background: rgba(8, 20, 14, 0.9);
+}
+
+.case.passed .status { color: #32a869; }
+.case.passed h2.case-name { color: #a1e0bd; }
+.case.passed .lock-icon { display: none; }
+
+/* 8-Я СЕКРЕТНАЯ КАРТОЧКА */
+.secret-case {
+    border-color: rgba(140, 20, 40, 0.9);
+}
+
+.secret-case.unlocked {
+    border-color: #ffcc00 !important;
+    background: radial-gradient(circle, rgba(45, 10, 25, 0.98) 0%, rgba(12, 3, 8, 0.99) 100%) !important;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.35) !important;
+    animation: goldGlow 2s infinite alternate;
+}
+
+@keyframes goldGlow {
+    from { box-shadow: 0 0 15px rgba(255, 204, 0, 0.2); }
+    to { box-shadow: 0 0 35px rgba(255, 204, 0, 0.5); }
+}
+
+/* БЕГУЩАЯ СТРОКА */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(20, 4, 8, 0.8);
+    border: 1px solid rgba(90, 20, 30, 0.4);
+    padding: 6px 0;
+    margin-bottom: 20px;
+    font-size: 9px;
+    color: #b53e53;
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: tickerAnim 18s linear infinite;
+}
+
+@keyframes tickerAnim {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ПОДВАЛ */
+footer { text-align: center; }
+
+.back-link {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #61222f;
+    color: #b88692;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(97, 34, 47, 0.3);
+    color: #ebd3d8;
+}
+
+.reset-btn {
+    display: block;
+    margin: 0 auto 15px;
+    background: transparent;
+    border: 1px dashed #4a1924;
+    color: #5c353f;
+    font-family: inherit;
+    font-size: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+/* ==========================================
+   СТИЛИ ДЛЯ 7-Й ФИНАЛЬНОЙ РАЗБЛОКИРОВАННОЙ КАРТОЧКИ
+   ========================================== */
+
+/* Когда 7 карточка разблокирована, она горит романтичным розово-золотым светом */
+.case.final-card.unlocked {
+    border-color: #ff3385 !important;
+    background: radial-gradient(circle, rgba(60, 10, 35, 0.95) 0%, rgba(20, 3, 12, 0.98) 100%) !important;
+    box-shadow: 0 0 25px rgba(255, 51, 133, 0.6), inset 0 0 15px rgba(255, 102, 178, 0.3) !important;
+    animation: romanticPulse 2.5s infinite alternate !important;
+}
+
+/* Изменение цвета названия и элементов внутри 7 карточки при разблокировке */
+.case.final-card.unlocked .case-name {
+    color: #ff99cc !important;
+    text-shadow: 0 0 12px #ff3385 !important;
+}
+
+.case.final-card.unlocked .case-top span,
+.case.final-card.unlocked .case-bottom span {
+    color: #ff66b2 !important;
+}
+
+.case.final-card.unlocked .separator {
+    background: linear-gradient(90deg, transparent, #ff3385, transparent) !important;
+}
+
+/* Плавная пульсация розового неонового света */
+@keyframes romanticPulse {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 51, 133, 0.5), inset 0 0 10px rgba(255, 51, 133, 0.2);
+        border-color: #ff3385;
+    }
+    100% {
+        box-shadow: 0 0 35px rgba(255, 102, 178, 0.9), inset 0 0 20px rgba(255, 102, 178, 0.4);
+        border-color: #ff99cc;
+    }
+}
